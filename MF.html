@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Blockchain</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+  display: flex;
+}
+
+.mutual-funds {
+  flex: 1;
+  /* Set the width of mutual funds section to take up the remaining space */
+}
+
+.cart-container {
+  width: 300px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.cart-container h1 {
+  margin-top: 0;
+}
+
+.cart-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.mutual-funds {
+  flex: 1;
+  /* Set the width of mutual funds section to take up the remaining space */
+}
+
+.cart-container {
+  width: 300px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.cart-container h1 {
+  margin-top: 0;
+}
+
+.cart-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-container button {
+  display: goldenrod;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-container button:hover {
+  background-color: #3e8e41;
+}
+
+header {
+			background-color: #2b5797;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		h1 {
+			margin: 0;
+			font-size: 32px;
+		}
+
+nav {
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #212121;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  background-color: goldenrod;
+  color: #fff;
+}
+
+.fund-container {
+  background-color: whitesmoke;
+  box-shadow: 0px 1px 3px goldenrod(0,0,0,0.2);
+  border-radius: 5px;
+  margin: 20px auto;
+  font-weight: bold;
+
+  max-width: 800px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+ul {
+  background-color: whitesmoke;
+
+  list-style: none;
+  margin: 30;
+
+  padding: 100x;
+}
+
+li a {
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+  padding: 15px 10px;
+
+
+  transition: all 0.2s ease-in-out;
+}
+
+li a:hover {
+  background-color: goldenrod;
+  color: #fff;
+}
+
+.add-to-cart {
+  display: goldenrod;
+  background-color: lightcoral;
+  color: #fff;
+  border: lightblue;
+  border-radius: 3px;
+  padding: 20px 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+p {
+			margin-bottom: 20px;
+		}
+
+.add-to-cart:hover {
+  background-color: whitesmoke;
+  color: lightcoral;
+  border: 2px solid #212121;
+}
+.footer {
+        background-color: lightblue;
+        color:black;
+        text-align: center;
+        padding: 20px;
+        }
+  
+.footer p {
+  margin: 0;
+}
+    </style>
+     
+  </head>
+  <body>
+    <header>
+      <h1>Mutual funds powered by blockchain
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="UpcomigFunds.html">Upcomig Mutual Funds</a></li>
+          <li><a href="aboutus.html">AboutUs</a></li>
+          <li><a href="logout.html">Logout</a></li>
+         
+        </ul>
+      </nav>
+    </header>
+   
+    
+    <div class="fund-container" style="position: absolute; top: 20; left: 20; padding-inline-end: 300px; right: 400px;">
+        <h1 style="color:seagreen;">Select  Mutual Funds:</h1>
+      <ul>
+        <li ><a href="#" onclick="addToCart('Nikhil Nifty Midcap 150 Index Fund Direct Growth')">Nikhil Nifty Midcap 150 Index Fund Direct Growth</a>
+            <p>Expense ratio, exit load and tax
+                
+                <li>Expense ratio: 1.07%</li>
+                <li>Inclusive of GST</li>
+                
+                <li> load</li>
+                <li>Exit load of 1% if redeemed within 3 months.</li>
+                <li>Stamp duty</li>
+                <li>0.005% (from July 1st, 2020)</li>
+                <li></li>
+                <li>Tax implication</li>
+                <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+                
+                
+          </p></li>
+        <li><a href="#" onclick="addToCart('Harsha Contra Direct Plan Growth')">Harsha Contra Direct Plan Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Venu Gopal Active Fund Direct Growth')">Venu Gopal Active Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Santhosh Digital India Fund Direct Growth')">Santhosh Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Narsi Prudential Commodities Fund Direct Growth')">Narsi Prudential Commodities Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Venkat Digital India Fund Direct Growth')">Venkat Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Venky Digital India Fund Direct Growth')">Venky Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Chinnu Digital India Fund Direct Growth')">Chinnu Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Naga Bharani Digital India Fund Direct Growth')">Naga Bharani Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Sameer Digital India Fund Direct Growth')">Sameer Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+        <li><a href="#" onclick="addToCart('Anant Digital India Fund Direct Growth')">Anant Digital India Fund Direct Growth</a><p>Expense ratio, exit load and tax
+          <li>Ratio, exit load and tax</li>
+          <li>Expense ratio: 1.07%</li>
+          <li>Inclusive of GST</li>
+          
+          <li> load</li>
+          <li>Exit load of 1% if redeemed within 3 months.</li>
+          <li>Stamp duty</li>
+          <li>0.005% (from July 1st, 2020)</li>
+          <li></li>
+          <li>Tax implication</li>
+          <li>Returns are taxed at 15%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 10% on returns of Rs 1 lakh+ in a financial year.</li>
+          
+            </p></li>
+      </ul>
+    </div>
+   
+    <div class="cart-container" style="position: absolute; top: 80; right: 0; padding-inline-end: 10px; right: 40px;">
+        <h2>Selected Mutual Funds</h2>
+      <h2>-------------------------------------Cart</h2>
+      <ul id="cart-items">
+      </ul>
+      <button onclick="checkout()">Checkout</button>
+      <p>Daily limit to invest Mutual Funds is one,  &nbsp; &nbsp; &nbsp; If you try to slelect more than one it won't work.</p>
+    </div>
+  
+    <script>
+      let cart = [];
+  
+      function addToCart(fundName) {
+        cart.push(fundName);
+        updateCart();
+      }
+  
+      function updateCart() {
+        let cartList = document.getElementById("cart-items");
+        cartList.innerHTML = "";
+        for (let i = 0; i < cart.length; i++) {
+            let listItem = document.createElement("li");
+            listItem.innerText = cart[i];
+            cartList.appendChild(listItem);
+        }
+        let cartCount = document.createElement("li");
+
+        cartCount.innerText = "----------------------------------------------------Total items in cart: " + cart.length;
+        cartList.appendChild(cartCount);
+        }
+  
+      function checkout() {
+        if (cart.length > 0 && cart. length <2) {
+          window.location.href = "/payment.html";
+        }
+      }
+    </script>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">
+        <p>&copy; 2023 x22156411@student.ncirl.ie</p>
+    </footer>
+  </body>
+
+  
+</html>

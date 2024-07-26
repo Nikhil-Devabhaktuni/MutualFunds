@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f2f2f2;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+			}
+			form {
+			border: 3px solid #f1f1f1;
+			max-width: 500px;
+			margin: auto;
+			padding: 20px;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 30vh;
+			}
+
+			
+			input[type=text], input[type=email] {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+			}
+			header {
+			background-color: #2b5797;
+			color: #fff;
+			padding: 2px;
+			text-align: center;
+		}
+			button {
+				background-color: #4CAF50;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				cursor: pointer;
+				width: 100%;
+			}
+			button:hover {
+				opacity: 0.8;
+			}
+			.cancelbtn {
+				width: auto;
+				padding: 10px 18px;
+				background-color: #f44336;
+			}
+			
+			
+			.container {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+			
+			max-width: 800px;
+			max-height: fit-content;
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 10px;
+			
+			}
+			.logo {
+				font-size: 24px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			.nav {
+				display: flex;
+				align-items: center;
+			}
+			.nav-item {
+				margin-left: 20px;
+			}
+			.nav-item a {
+				color: #fff;
+				text-decoration: none;
+				font-size: 16px;
+				font-weight: bold;
+				transition: all 0.3s ease;
+			}
+			.nav-item a:hover {
+				color: #4CAF50;
+			}
+			.footer {
+        background-color: lightblue;
+        color:black;
+        text-align: center;
+        padding: 20px;
+        }
+		#readArea {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 20px;
+			
+		}
+  
+			.footer p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<header style="position: fixed; top: 0; left: 0; right: 0;">
+		<h1>Mutual funds powered by blockchain</h1>
+	</header>
+<body>
+        <form method="POST">
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
+    
+                <button type="button" id="otp-btn">Get OTP</button>
+            </div>
+    
+            <div class="container">
+                <label for="otp"><b>OTP</b></label>
+                <input type="text" placeholder="Enter OTP" name="otp" required>
+                <button id="loginBtn" type="submit" class="btn btn-primary" disabled>Login</button>
+
+                
+            </div>
+        </form>
+    
+        <script>
+            const otpBtn = document.getElementById('otp-btn');
+const loginBtn = document.getElementById('loginBtn');
+
+// Disable the login button by default
+loginBtn.disabled = true;
+
+// Add event listener for "Get OTP" button
+otpBtn.addEventListener('click', async function(event) {
+  event.preventDefault(); // Prevent form from submitting normally
+
+  // Send request to server to send OTP
+  const email = document.querySelector('input[name="email"]').value;
+  const response = await fetch('/generateOTP', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email })
+  });
+  const data = await response.json();
+
+  // Update UI based on response
+  if (data.success) {
+    alert('OTP sent to your email!');
+    loginBtn.disabled = false;
+  } else {
+    alert('Failed to send OTP. Please try again later.');
+  }
+});
+
+// Add event listener for form submission
+document.querySelector('form').addEventListener('submit', async function(event) {
+  event.preventDefault(); // Prevent form from submitting normally
+
+  // Send request to server to validate OTP
+  const email = document.querySelector('input[name="email"]').value;
+  const otp = document.querySelector('input[name="otp"]').value;
+  const response = await fetch('/verify-otp', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, otp })
+  });
+  const data = await response.json();
+
+  // Update UI based on response
+  if (data.success) {
+    alert('OTP validation successful!');
+    window.location.href = '/MF.html';
+  } else {
+    alert('Invalid OTP. Please try again.');
+  }
+});
+        </script>
+</body>
+</html>
+		<footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">
+			<p>&copy; 2023 x22156411. All rights reserved.</p>
+		</footer>
+	</body>
+	
+</html>	
